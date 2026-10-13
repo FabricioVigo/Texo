@@ -1,0 +1,77 @@
+
+
+##PRIMEROS PASOS BACKEND
+npm i express
+
+npm i -D nodemon
+
+
+
+### INSTALACION DE TS
+npm i -D typescript ts-node
+
+> tsconfig.json {
+    "compilerOptions" : {
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "lib": ["ESNext"],
+        "target": "ESNext",
+        "moduleResolution": "NodeNext",
+        "module": "NodeNext",
+        "strict": false,
+        "sourceMap: true,
+        "esModuleInterop": true,
+        "declaration": true,
+    },
+    "include": ["src/**/*.ts"]
+}
+
+
+### AÑADIENDO DB Y ORM
+dwfabrivigo_db_user
+
+tFsC5bwTJmdmz949
+
+-npm i mongoose
+_ config
+
+_models - User.ts 
+const userSchema = new Schema({
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
+        email: {
+        type: String,
+        required: true,
+        trim: true,
+        unique: true
+    },
+        password: {
+        type: String,
+        required: true,
+        trim: true
+    }
+    
+})
+
+y despues creamos el modelo
+
+const User = mongoose.model('User', userSchema)
+export default User
+
+
+
+#-------------------------------
+CREACION DEL FRONTEND
+
+npm create vite@latest
+
+npm install -D tailwindcss@3 postcss autoprefixer
+
+npx tailwindcss init -p
+
+npm i react-router-dom
+npm i react-hook-form
+npm i axios
